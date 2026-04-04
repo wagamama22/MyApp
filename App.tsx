@@ -10,11 +10,19 @@ import {
   Platform,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { scale, verticalScale } from "react-native-size-matters";
+import { useState } from "react";
 
 export default function App() {
   // this is where you insert your javascript functions
   const onLinkPress = () => Alert.alert("a link is pressed");
   const onButtonPress = () => Alert.alert("a button is pressed");
+  //declare the use state initial state
+  const [state, setState] = useState(20);
+  //set the setState
+  const increaseNumber = () => setState((prevState) => prevState + 1);
+  const decreaseNumber = () => setState(state - 1);
+
   return (
     <SafeAreaProvider>
       {/* This is for text formatting */}
@@ -47,9 +55,21 @@ export default function App() {
         </SafeAreaView>
         <View style={{ height: 1 }} />
         {/* making app compatible both on android and ios */}
-        <Text style={styles.ftitle}>
+        <View style={styles.myflex2}>
+         <Text style={styles.ftitle}>
           this is {Platform.OS === "android" ? "Android" : "IOS"} device
-        </Text>
+        </Text> 
+        </View>
+        <View style={styles.myflex1}>
+          <View>
+            <Button  title="increase number" onPress={increaseNumber} />
+          </View>
+          {/* {state} this is how variables are stored */}
+          <Text style={styles.ftitle3}>{state}</Text>
+          <View>
+            <Button title="decrease number" onPress={decreaseNumber} />
+          </View>
+        </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -80,22 +100,41 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
   },
   image: {
-    width: 100,
-    height: 80,
+    // this makes Iit responsive across screens
+    width: "200%",
+    height: "120%",
     marginLeft: 35,
     // this makes an image a circle
     borderRadius: 50,
   },
   but: {
-    width: 100,
-    height: 50,
-    marginLeft: 40,
+    // this makes Iit responsive across screens
+    width: scale(100),
+    height: scale(50),
+    marginLeft: 180,
     marginTop: 25,
   },
   myflex: {
     flexDirection: "row",
-    flex: 0.2,
+    flex: 1,
     //making app compatible both on android and ios
     backgroundColor: Platform.OS === "android" ? "yellow" : "black",
+  },
+  myflex1:{
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: Platform.OS === "android" ? "black" : "white",
+  },
+   myflex2:{
+    flex: 1,
+    backgroundColor: Platform.OS === "android" ? "green" : "white",
+  },
+   ftitle3: {
+    fontSize: 40,
+    fontWeight: "500",
+    color: "white",
+    marginLeft: 15,
+    marginRight: 15,
+    bottom: 5,
   },
 });
