@@ -1,10 +1,20 @@
-import { Alert, StyleSheet, Text, View, Image, Button, TouchableOpacity, Pressable } from "react-native";
+import {
+  Alert,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Button,
+  TouchableOpacity,
+  Pressable,
+  Platform,
+} from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   // this is where you insert your javascript functions
-  const onLinkPress = () => Alert.alert("a link is pressed")
-  const onButtonPress = () => Alert.alert("a button is pressed")
+  const onLinkPress = () => Alert.alert("a link is pressed");
+  const onButtonPress = () => Alert.alert("a button is pressed");
   return (
     <SafeAreaProvider>
       {/* This is for text formatting */}
@@ -12,10 +22,7 @@ export default function App() {
         <Text style={styles.ftitle}>We are starting</Text>
         <Text style={styles.ftitle1}>
           Morgan's Online Training/Tutorial For Web Development.{" "}
-          <Text
-            style={styles.ftitle2}
-            onPress={onLinkPress}
-          >
+          <Text style={styles.ftitle2} onPress={onLinkPress}>
             Empowering
           </Text>{" "}
           Your Web Development Journey
@@ -25,17 +32,24 @@ export default function App() {
         <SafeAreaView style={styles.myflex}>
           <Pressable onPress={onLinkPress}>
             <Image
-            style={styles.image}
-            source={{
-              uri: "https://morgan-web-school-assignment.neocities.org/welbees.png",
-            }} 
-          />
+              style={styles.image}
+              source={{
+                uri: "https://morgan-web-school-assignment.neocities.org/welbees.png",
+              }}
+            />
           </Pressable>
           <TouchableOpacity>
-             {/* function call here */}
-          <View style={styles.but}><Button title="Click me" onPress={onButtonPress}/></View>
+            {/* function call here */}
+            <View style={styles.but}>
+              <Button title="Click me" onPress={onButtonPress} />
+            </View>
           </TouchableOpacity>
         </SafeAreaView>
+        <View style={{ height: 1 }} />
+        {/* making app compatible both on android and ios */}
+        <Text style={styles.ftitle}>
+          this is {Platform.OS === "android" ? "Android" : "IOS"} device
+        </Text>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -72,15 +86,16 @@ const styles = StyleSheet.create({
     // this makes an image a circle
     borderRadius: 50,
   },
-   but: {
+  but: {
     width: 100,
     height: 50,
     marginLeft: 40,
     marginTop: 25,
   },
-  myflex:{
+  myflex: {
     flexDirection: "row",
-    flex: .2,
-    backgroundColor: "black",
-  }
+    flex: 0.2,
+    //making app compatible both on android and ios
+    backgroundColor: Platform.OS === "android" ? "yellow" : "black",
+  },
 });
