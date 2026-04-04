@@ -9,10 +9,12 @@ import {
   Pressable,
   Platform,
   Modal,
+  ImageBackground,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { scale, verticalScale } from "react-native-size-matters";
 import { useState } from "react";
+
 
 export default function App() {
   // this is where you insert your javascript functions
@@ -79,6 +81,7 @@ export default function App() {
             </Modal>
           </View>
         </View>
+        <ImageBackground style={styles.myimageBackground} source={{uri: "https://morgan-web-school-assignment.neocities.org/bgk.png"}} />
         <View style={styles.myflex1}>
           <View>
             <Button title="increase number" onPress={increaseNumber} />
@@ -147,6 +150,10 @@ const styles = StyleSheet.create({
   myflex2: {
     flex: 1,
     backgroundColor: Platform.OS === "android" ? "green" : "white",
+  },
+  myimageBackground:{
+    flex: 2,
+    backgroundColor: "lighgray",
   },
   ftitle3: {
     fontSize: 40,
