@@ -1,4 +1,4 @@
-import { Alert, StyleSheet, Text, View, Image, Button } from "react-native";
+import { Alert, StyleSheet, Text, View, Image, Button, TouchableOpacity, Pressable } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
@@ -23,14 +23,18 @@ export default function App() {
         {/* Adding image and space */}
         <View style={{ height: 1 }} />
         <SafeAreaView style={styles.myflex}>
-          <Image
+          <Pressable onPress={onLinkPress}>
+            <Image
             style={styles.image}
             source={{
               uri: "https://morgan-web-school-assignment.neocities.org/welbees.png",
-            }}
+            }} 
           />
-          {/* function call here */}
+          </Pressable>
+          <TouchableOpacity>
+             {/* function call here */}
           <View style={styles.but}><Button title="Click me" onPress={onButtonPress}/></View>
+          </TouchableOpacity>
         </SafeAreaView>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -76,7 +80,7 @@ const styles = StyleSheet.create({
   },
   myflex:{
     flexDirection: "row",
-    flex: .01,
+    flex: .2,
     backgroundColor: "black",
   }
 });
