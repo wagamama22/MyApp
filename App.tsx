@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Pressable,
   Platform,
+  Modal,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { scale, verticalScale } from "react-native-size-matters";
@@ -22,6 +23,9 @@ export default function App() {
   //set the setState
   const increaseNumber = () => setState((prevState) => prevState + 1);
   const decreaseNumber = () => setState(state - 1);
+  //use usestate for the modal screen
+  //set the useState() modal screen
+  const[minvisible, setVisible] = useState(false)
 
   return (
     <SafeAreaProvider>
@@ -56,13 +60,28 @@ export default function App() {
         <View style={{ height: 1 }} />
         {/* making app compatible both on android and ios */}
         <View style={styles.myflex2}>
-         <Text style={styles.ftitle}>
-          this is {Platform.OS === "android" ? "Android" : "IOS"} device
-        </Text> 
+          <Text style={styles.ftitle}>
+            this is {Platform.OS === "android" ? "Android" : "IOS"} device
+          </Text>
+          <View style={{ height: 1 }} />
+          <View style={styles.but}>
+            <Button title="Open Modal" onPress={()=> setVisible(true)} />
+          </View>
+          <View>
+            <Modal visible={minvisible} animationType="slide">
+              <Text style={styles.ftitle}>
+                his is modal. put your code here
+              </Text>
+              <View style={{ height: 1 }} />
+              <View style={styles.but}>
+                <Button title="Close modal" onPress={()=> setVisible(false)} />
+              </View>
+            </Modal>
+          </View>
         </View>
         <View style={styles.myflex1}>
           <View>
-            <Button  title="increase number" onPress={increaseNumber} />
+            <Button title="increase number" onPress={increaseNumber} />
           </View>
           {/* {state} this is how variables are stored */}
           <Text style={styles.ftitle3}>{state}</Text>
@@ -110,7 +129,7 @@ const styles = StyleSheet.create({
   but: {
     // this makes Iit responsive across screens
     width: scale(100),
-    height: scale(50),
+    height: verticalScale(50),
     marginLeft: 180,
     marginTop: 25,
   },
@@ -120,16 +139,16 @@ const styles = StyleSheet.create({
     //making app compatible both on android and ios
     backgroundColor: Platform.OS === "android" ? "yellow" : "black",
   },
-  myflex1:{
+  myflex1: {
     flex: 1,
     flexDirection: "row",
     backgroundColor: Platform.OS === "android" ? "black" : "white",
   },
-   myflex2:{
+  myflex2: {
     flex: 1,
     backgroundColor: Platform.OS === "android" ? "green" : "white",
   },
-   ftitle3: {
+  ftitle3: {
     fontSize: 40,
     fontWeight: "500",
     color: "white",
