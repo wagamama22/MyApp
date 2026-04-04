@@ -1,4 +1,4 @@
-import { Alert, StyleSheet, Text, View } from "react-native";
+import { Alert, StyleSheet, Text, View, Image } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
@@ -17,6 +17,16 @@ export default function App() {
           </Text>{" "}
           Your Web Development Journey
         </Text>
+        {/* Adding image and space */}
+        <View style={{ height: 1 }} />
+        <SafeAreaView>
+          <Image
+            style={styles.image}
+            source={{
+              uri: "https://morgan-web-school-assignment.neocities.org/welbees.png",
+            }}
+          />
+        </SafeAreaView>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -45,5 +55,10 @@ const styles = StyleSheet.create({
     color: "red",
     textAlign: "justify",
     textDecorationLine: "underline",
+  },
+  image: {
+    width: 100,
+    height: 80,
+    marginLeft: 35,
   },
 });
