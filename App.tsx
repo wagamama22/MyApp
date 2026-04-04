@@ -60,5 +60,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 80,
     marginLeft: 35,
+    // this makes an image a circle
+    borderRadius: 50,
   },
 });
