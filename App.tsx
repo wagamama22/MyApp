@@ -15,9 +15,9 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { scale, verticalScale } from "react-native-size-matters";
 import { useState } from "react";
 //importing from component folder
-import AppBackgroundImage from "./src/components/AppBackgroundImage" ;
-
-
+import AppBackgroundImage from "./src/components/AppBackgroundImage";
+//importing section2 from component folder
+import Section2 from "./src/components/Section2";
 
 export default function App() {
   // this is where you insert your javascript functions
@@ -47,20 +47,8 @@ export default function App() {
         {/* Adding image and space */}
         <View style={{ height: 1 }} />
         <SafeAreaView style={styles.myflex}>
-          <Pressable onPress={onLinkPress}>
-            <Image
-              style={styles.image}
-              source={{
-                uri: "https://morgan-web-school-assignment.neocities.org/welbees.png",
-              }}
-            />
-          </Pressable>
-          <TouchableOpacity>
-            {/* function call here */}
-            <View style={styles.but}>
-              <Button title="Click me" onPress={onButtonPress} />
-            </View>
-          </TouchableOpacity>
+          {/* insert section2 component with its arguement*/}
+          <Section2 onLinkPress={onLinkPress} onButtonPress={onButtonPress} />
         </SafeAreaView>
         <View style={{ height: 1 }} />
         {/* making app compatible both on android and ios */}
@@ -84,6 +72,7 @@ export default function App() {
             </Modal>
           </View>
         </View>
+        {/* where i added my imageackground component */}
         <AppBackgroundImage />
         <View style={styles.myflex1}>
           <View>
@@ -124,14 +113,6 @@ const styles = StyleSheet.create({
     textAlign: "justify",
     textDecorationLine: "underline",
   },
-  image: {
-    // this makes Iit responsive across screens
-    width: "200%",
-    height: "120%",
-    marginLeft: 35,
-    // this makes an image a circle
-    borderRadius: 50,
-  },
   but: {
     // this makes Iit responsive across screens
     width: scale(100),
@@ -154,10 +135,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Platform.OS === "android" ? "green" : "white",
   },
-  // myimageBackground: {
-  //   flex: 2,
-  //   backgroundColor: "lighgray",
-  // },
   ftitle3: {
     fontSize: 40,
     fontWeight: "500",
