@@ -1,17 +1,23 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import Avatar from "../components/Avatar";
+import Avatar2 from "../components/Avatar2";
 
 const Scanwin = () => {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.mycontainer}>
-       <View  style={styles.scanflex}   ></View>
-       <View  style={styles.scanflex1}    ></View>
-       <View  style={styles.scanflex2}      ></View>
-       <View  style={styles.scanflex3}       ></View>
-       <View  style={styles.scanflex4}       ></View>
-       <View  style={styles.scanflex5}       ></View>
+        <View style={styles.scanflex}>
+          {/* rendering the two header components from component folder */}
+          <Avatar />
+          <Avatar2 />
+        </View>
+        <View style={styles.scanflex1}></View>
+        <View style={styles.scanflex2}></View>
+        <View style={styles.scanflex3}></View>
+        <View style={styles.scanflex4}></View>
+        <View style={styles.scanflex5}></View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -27,7 +33,9 @@ const styles = StyleSheet.create({
   },
   scanflex: {
     flex: 1,
+    flexDirection: "row",
     backgroundColor: "lightgray",
+    justifyContent: "space-between",
   },
   scanflex1: {
     flex: 1,
@@ -49,5 +57,4 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "lightgray",
   },
-
 });
