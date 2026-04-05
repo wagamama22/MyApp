@@ -41,17 +41,18 @@ export default Section2;
 const styles = StyleSheet.create({
   image: {
     // this makes Iit responsive across screens
-    width: "200%",
-    height: "120%",
+    width: scale(80),
+    height: scale(80),
     marginLeft: 35,
     // this makes an image a circle
-    borderRadius: 50,
+    borderRadius: 40,
+    bottom: 10,
   },
   but: {
     // this makes Iit responsive across screens
     width: scale(100),
     height: verticalScale(50),
-    marginLeft: 180,
+    marginLeft: 160,
     marginTop: 25,
   },
 });
