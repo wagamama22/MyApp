@@ -14,6 +14,9 @@ import {
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { scale, verticalScale } from "react-native-size-matters";
 import { useState } from "react";
+//importing from component folder
+import AppBackgroundImage from "./src/components/AppBackgroundImage" ;
+
 
 
 export default function App() {
@@ -27,7 +30,7 @@ export default function App() {
   const decreaseNumber = () => setState(state - 1);
   //use usestate for the modal screen
   //set the useState() modal screen
-  const[minvisible, setVisible] = useState(false)
+  const [minvisible, setVisible] = useState(false);
 
   return (
     <SafeAreaProvider>
@@ -67,7 +70,7 @@ export default function App() {
           </Text>
           <View style={{ height: 1 }} />
           <View style={styles.but}>
-            <Button title="Open Modal" onPress={()=> setVisible(true)} />
+            <Button title="Open Modal" onPress={() => setVisible(true)} />
           </View>
           <View>
             <Modal visible={minvisible} animationType="slide">
@@ -76,12 +79,12 @@ export default function App() {
               </Text>
               <View style={{ height: 1 }} />
               <View style={styles.but}>
-                <Button title="Close modal" onPress={()=> setVisible(false)} />
+                <Button title="Close modal" onPress={() => setVisible(false)} />
               </View>
             </Modal>
           </View>
         </View>
-        <ImageBackground style={styles.myimageBackground} source={{uri: "https://morgan-web-school-assignment.neocities.org/bgk.png"}} />
+        <AppBackgroundImage />
         <View style={styles.myflex1}>
           <View>
             <Button title="increase number" onPress={increaseNumber} />
@@ -151,10 +154,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Platform.OS === "android" ? "green" : "white",
   },
-  myimageBackground:{
-    flex: 2,
-    backgroundColor: "lighgray",
-  },
+  // myimageBackground: {
+  //   flex: 2,
+  //   backgroundColor: "lighgray",
+  // },
   ftitle3: {
     fontSize: 40,
     fontWeight: "500",
