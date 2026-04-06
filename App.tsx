@@ -6,7 +6,10 @@ import Homescreen from "./src/screens/Homescreen";
 import Avatar2 from './src/components/Avatar2';
 import Scanwin from './src/screens/Scanwin';
 import Avatar from './src/components/Avatar';
-
+import ScanImageButtons from "./src/components/ScanImageButtons";
+import Timers from './src/components/Timers';
+import OtherBackground from "./src/components/OtherBackground";
+import ProductButton from "./src/components/ProductButton";
 
 export default function App() {
   return (
@@ -19,7 +22,7 @@ export default function App() {
     // </NavigationContainer>
 
     //render testing screens and functional components
-    <Scanwin />
+    <Scanwin/>
     
 
   );

@@ -34,10 +34,12 @@ const styles = StyleSheet.create({
   avatartxt: {
     fontSize: 25,
     fontWeight: 900,
+    marginLeft: 12,
   },
   avatartxt1: {
     fontSize: 19,
     fontWeight: 400,
+    marginLeft: 12,
   },
   submyavatar: {
     flexDirection: "column",

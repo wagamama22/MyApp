@@ -3,6 +3,12 @@ import React from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Avatar from "../components/Avatar";
 import Avatar2 from "../components/Avatar2";
+import ScanImageButtons from "../components/ScanImageButtons";
+import ScanTest from "../components/ScanTest";
+import Timers from "../components/Timers";
+import OtherBackground from "../components/OtherBackground"; 
+import ProductButton from "../components/ProductButton";
+import Sharesection from "../components/Sharesection";
 
 const Scanwin = () => {
   return (
@@ -13,11 +19,15 @@ const Scanwin = () => {
           <Avatar />
           <Avatar2 />
         </View>
-        <View style={styles.scanflex1}></View>
-        <View style={styles.scanflex2}></View>
-        <View style={styles.scanflex3}></View>
-        <View style={styles.scanflex4}></View>
-        <View style={styles.scanflex5}></View>
+        <View style={styles.scanflex1}>
+          <ScanTest  />
+          <View></View>
+          <ScanImageButtons  />
+        </View>
+        <View style={styles.scanflex2}><Timers /></View>
+        <View style={styles.scanflex3}>  <OtherBackground />  </View>
+        <View style={styles.scanflex4}>  <ProductButton  />  </View>
+        <View style={styles.scanflex5}>  <Sharesection  />   </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -38,19 +48,22 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   scanflex1: {
-    flex: 1,
+    flex: 1.5,
     backgroundColor: "lightgray",
+    flexDirection: "column",
+    textAlign: "center",
+    justifyContent: "space-around",
   },
   scanflex2: {
-    flex: 1,
+    flex: 0.8,
     backgroundColor: "lightgray",
   },
   scanflex3: {
-    flex: 1,
+    flex: 1.7,
     backgroundColor: "lightgray",
   },
   scanflex4: {
-    flex: 1,
+    flex: 0.5,
     backgroundColor: "lightgray",
   },
   scanflex5: {

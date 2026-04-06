@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   avatartxt1: {
     fontSize: 19,
-    fontWeight: 400,
+    fontWeight: "400",
     color: "red",
   },
   submyavatar: {
