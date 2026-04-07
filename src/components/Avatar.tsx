@@ -6,17 +6,17 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const Avatar = () => {
   return (
     <SafeAreaView style={styles.myavatar}>
-        <Image
-          source={{
-            uri: "https://morgan-web-school-assignment.neocities.org/avatar.png",
-          }}
-          style={styles.image}
-        />
-        <View>
-          <Text style={styles.avatartxt}>Hi John!</Text>
-          <Text style={styles.avatartxt1}>50+ Scans </Text>
-        </View>
-      </SafeAreaView>
+      <Image
+        source={{
+          uri: "https://morgan-web-school-assignment.neocities.org/avatar.png",
+        }}
+        style={styles.image}
+      />
+      <View>
+        <Text style={styles.avatartxt}>Hi John!</Text>
+        <Text style={styles.avatartxt1}>50+ Scans </Text>
+      </View>
+    </SafeAreaView>
   );
 };
 

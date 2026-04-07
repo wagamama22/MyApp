@@ -7,7 +7,7 @@ const Timers = () => {
   return (
     <ImageBackground
       source={{
-        uri: "https://morgan-web-school-assignment.neocities.org/timer.png",
+        uri: "https://morgan-web-school-assignment.neocities.org/timerz.png",
       }}
       style={styles.imgbackground}
     />
@@ -19,6 +19,6 @@ export default Timers;
 const styles = StyleSheet.create({
   imgbackground: {
     width: scale(350),
-    height: verticalScale(100),
+    height: verticalScale(80),
   },
 });

@@ -14,7 +14,7 @@ type Section2Props = {
   onButtonPress: () => void;
 };
 
-const Section2 = ({onLinkPress, onButtonPress} : Section2Props) => {
+const Section2 = ({ onLinkPress, onButtonPress }: Section2Props) => {
   return (
     <>
       <Pressable onPress={onLinkPress}>

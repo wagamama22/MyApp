@@ -1,38 +1,47 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, Alert } from "react-native";
-import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
+import React, { use } from "react";
 import { s, vs } from "react-native-size-matters";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 
 const ScanImageButtons = () => {
+  const navigation = useNavigation()
   return (
     <View style={styles.scanimgbackground}>
-      <TouchableOpacity  onPress={() => Alert.alert("write product to search")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Productscreen")}>
         <Image
-        source={{
-          uri: "https://morgan-web-school-assignment.neocities.org/find%20product.png",
-        }}
-        style={styles.image}
-      />
+          source={{
+            uri: "https://morgan-web-school-assignment.neocities.org/find%20product.png",
+          }}
+          style={styles.image}
+        />
       </TouchableOpacity>
-      
-      <TouchableOpacity onPress={() => Alert.alert("Take photos now")}  >
-          <Image
-        source={{
-          uri: "https://morgan-web-school-assignment.neocities.org/take%20photos.png",
-        }}
-        style={styles.image}
-      />
+
+      <TouchableOpacity onPress={() => navigation.navigate("Profilescreen")}>
+        <Image
+          source={{
+            uri: "https://morgan-web-school-assignment.neocities.org/take%20photos.png",
+          }}
+          style={styles.image}
+        />
       </TouchableOpacity>
-    
-      <TouchableOpacity onPress={() => Alert.alert("You have gooten a ticket for yourself")}>
-         <Image
-        source={{
-          uri: "https://morgan-web-school-assignment.neocities.org/earn%20tickets.png",
-        }}
-        style={styles.image}
-      />
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Listscreen")}
+      >
+        <Image
+          source={{
+            uri: "https://morgan-web-school-assignment.neocities.org/earn%20tickets.png",
+          }}
+          style={styles.image}
+        />
       </TouchableOpacity>
-     
     </View>
   );
 };

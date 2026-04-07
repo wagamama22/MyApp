@@ -8,11 +8,13 @@ import {
 } from "react-native";
 import React from "react";
 import { s, vs } from "react-native-size-matters";
+import { useNavigation } from "@react-navigation/native";
 
 const ProductButton = () => {
+  const navigation = useNavigation()
   return (
     <View>
-      <TouchableOpacity onPress={() => Alert.alert("write product to search")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Productscreen")}>
         <Image
           source={{
             uri: "https://morgan-web-school-assignment.neocities.org/scan_product_button-removebg-preview.png",
