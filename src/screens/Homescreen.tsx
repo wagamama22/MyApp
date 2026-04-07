@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.ftitle} onPress={() => navigation.goBack()}>Go Back</Text>
+      <Text style={styles.ftitle} onPress={() => navigation.navigate("Scanwin")}>Go To Scan & Win</Text>
       <Text style={styles.ftitle1}>
         Morgan's Online Training/Tutorial For Web Development.{" "}
         <Text style={styles.ftitle2} onPress={onLinkPress}>
