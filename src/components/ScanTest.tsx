@@ -14,7 +14,7 @@ export default ScanTest
 
 const styles = StyleSheet.create({
   scantest:{
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: 400,
     paddingLeft: 15,
     paddingRight: 15,

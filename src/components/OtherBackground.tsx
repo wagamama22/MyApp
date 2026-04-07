@@ -21,6 +21,6 @@ export default OtherBackground;
 const styles = StyleSheet.create({
   imgbackground: {
     width: scale(350),
-    height: verticalScale(180),
+    height: verticalScale(220),
   },
 });

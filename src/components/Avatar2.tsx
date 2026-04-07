@@ -15,9 +15,6 @@ const Avatar = () => {
         />
         <Text style={styles.avatartxt}>124</Text>
       </View>
-      {/* <View>
-        <Text style={styles.avatartxt}>124</Text>
-      </View> */}
       <View>
         <Text style={styles.avatartxt1}>View Entries </Text>
       </View>

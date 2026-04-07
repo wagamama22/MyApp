@@ -18,8 +18,7 @@ const Scanwin = () => {
         <Avatar2 />
       </View>
       <View style={styles.scanflex1}>
-        <ScanTest />
-        <View></View>
+        <View><ScanTest /></View>
         <ScanImageButtons />
       </View>
       <View style={styles.scanflex2}>
@@ -46,14 +45,16 @@ export default Scanwin;
 //for stylesheet
 const styles = StyleSheet.create({
   mycontainer: {
-    flex: 1,
+    flex: 1.5,
     backgroundColor: "lightgray",
+    bottom: 5,
   },
   scanflex: {
     flex: 1,
     flexDirection: "row",
     backgroundColor: "lightgray",
     justifyContent: "space-between",
+    bottom: 90,
   },
   scanflex1: {
     flex: 1.5,
@@ -61,21 +62,26 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     textAlign: "center",
     justifyContent: "space-around",
+    bottom: 75,
   },
   scanflex2: {
     flex: 0.7,
     backgroundColor: "lightgray",
+    bottom: 83,
   },
   scanflex3: {
-    flex: 1.7,
+    flex: 2,
     backgroundColor: "lightgray",
+    bottom: 65,
   },
   scanflex4: {
     flex: 0.5,
     backgroundColor: "lightgray",
+    bottom: 19,
   },
   scanflex5: {
     flex: 1,
     backgroundColor: "lightgray",
+    bottom: 19,
   },
 });
