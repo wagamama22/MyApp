@@ -46,19 +46,19 @@ export default Scanwin;
 const styles = StyleSheet.create({
   mycontainer: {
     flex: 1.5,
-    backgroundColor: "lightgray",
+    backgroundColor: "#F8F7F2",
     bottom: 5,
   },
   scanflex: {
     flex: 1,
     flexDirection: "row",
-    backgroundColor: "lightgray",
+    backgroundColor: "#F8F7F2",
     justifyContent: "space-between",
     bottom: 90,
   },
   scanflex1: {
     flex: 1.5,
-    backgroundColor: "lightgray",
+    backgroundColor: "#F8F7F2",
     flexDirection: "column",
     textAlign: "center",
     justifyContent: "space-around",
@@ -66,22 +66,22 @@ const styles = StyleSheet.create({
   },
   scanflex2: {
     flex: 0.7,
-    backgroundColor: "lightgray",
+    backgroundColor: "#F8F7F2",
     bottom: 83,
   },
   scanflex3: {
     flex: 2,
-    backgroundColor: "lightgray",
+    backgroundColor: "#F8F7F2",
     bottom: 65,
   },
   scanflex4: {
     flex: 0.5,
-    backgroundColor: "lightgray",
+    backgroundColor: "#F8F7F2",
     bottom: 19,
   },
   scanflex5: {
     flex: 1,
-    backgroundColor: "lightgray",
+    backgroundColor: "#F8F7F2",
     bottom: 19,
   },
 });

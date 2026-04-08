@@ -50,7 +50,7 @@ export default ScanImageButtons;
 
 const styles = StyleSheet.create({
   scanimgbackground: {
-    backgroundColor: "lightgrey",
+    backgroundColor: "#F8F7F2",
     flexDirection: "row",
     justifyContent: "space-evenly",
   },
